@@ -1,0 +1,247 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #e0f7fa, #80deea);
+    color: #333;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.game-container {
+    max-width: 700px;
+    margin: 70px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #00796b;
+    animation: popIn 1s ease-in;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+header p {
+    font-size: 1.4rem;
+    color: #004d40;
+}
+
+#level-selector button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background: #26a69a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#level-selector button:hover {
+    background: #00897b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Tile Styles */
+.tiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 25px 0;
+    animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.tiles div {
+    font-size: 1.7rem;
+    margin: 10px;
+    padding: 15px 25px;
+    background: #b2dfdb;
+    border: 2px solid #00796b;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    user-select: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tiles div:hover {
+    transform: scale(1.1);
+    background: #80cbc4;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#verify-button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: pulse 2s infinite;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+#verify-button:hover {
+    background: #388e3c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#feedback {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: #004d40;
+    animation: fadeInFeedback 0.5s ease;
+}
+
+@keyframes fadeInFeedback {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#meaning {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e0f2f1;
+    border: 1px solid #00796b;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    animation: slideIn 0.5s ease;
+    color: #004d40;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    #level-selector button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+
+    .tiles div {
+        font-size: 1.4rem;
+        padding: 12px 20px;
+    }
+
+    #verify-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .tiles div {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+    }
+
+    #verify-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}

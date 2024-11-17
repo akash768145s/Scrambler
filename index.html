@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ta">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kuzhappi | குழப்பி (The Scrambler)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <header>
+        <h1>Kuzhappi | குழப்பி</h1>
+        <p>சிதறிய தமிழ் வார்த்தைகளை சரியான வார்த்தையாக அமைக்கவும்</p>
+      </header>
+      <div id="game">
+        <div id="level-selector">
+          <button onclick="startGame('easy')">Easy</button>
+          <button onclick="startGame('medium')">Medium</button>
+          <button onclick="startGame('hard')">கடினம்</button>
+        </div>
+        <div id="game-board" class="hidden">
+          <div id="scrambled-tiles" class="tiles"></div>
+          <button id="verify-button" onclick="verifyAnswer()">Verify</button>
+          <div id="feedback"></div>
+          <div id="meaning" class="hidden"></div>
+        </div>
+      </div>
+      <footer>
+        <p>Score: <span id="score">0</span></p>
+        <p>Time: <span id="time">0</span> seconds</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
