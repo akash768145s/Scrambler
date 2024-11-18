@@ -36,7 +36,6 @@ function startLevel() {
   if (timerInterval) clearInterval(timerInterval); // Clear any existing interval
   timerInterval = setInterval(updateTimer, 1000); // Update the timer every second
 }
-
 function loadWord() {
   const { scrambled } = levels[currentLevel][currentIndex];
   const scrambledTiles = document.getElementById("scrambled-tiles");
@@ -45,13 +44,45 @@ function loadWord() {
     .join("");
 
   Array.from(scrambledTiles.children).forEach((tile) => {
+    // Add mouse drag-and-drop events
     tile.addEventListener("dragstart", dragStart);
     tile.addEventListener("dragover", dragOver);
     tile.addEventListener("drop", drop);
+
+    // Add touch support
+    tile.addEventListener("touchstart", touchStart);
+    tile.addEventListener("touchmove", touchMove);
+    tile.addEventListener("touchend", touchEnd);
   });
 }
 
-let draggedTile;
+let draggedTile, touchStartX, touchStartY;
+
+function touchStart(event) {
+  const touch = event.touches[0];
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
+  draggedTile = event.target; // Remember the touched tile
+}
+
+function touchMove(event) {
+  event.preventDefault(); // Prevent page scrolling during touch
+  const touch = event.touches[0];
+  const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+  if (
+    element &&
+    element !== draggedTile &&
+    element.parentNode === draggedTile.parentNode
+  ) {
+    const parent = element.parentNode;
+    parent.insertBefore(draggedTile, element.nextSibling);
+  }
+}
+
+function touchEnd() {
+  draggedTile = null; // Reset the dragged tile
+}
 
 function dragStart(event) {
   draggedTile = event.target;

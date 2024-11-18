@@ -245,3 +245,9 @@ header p {
         font-size: 0.9rem;
     }
 }
+
+
+div[draggable="true"] {
+    touch-action: none;
+    /* Prevent conflicts with native touch gestures */
+}
