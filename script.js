@@ -5,14 +5,14 @@ const levels = {
     { word: "நிலா", scrambled: ["நி", "லா"] },
   ],
   medium: [
-    { word: "இடியாப்பம்", scrambled: ["இ", "டி", "யா", "ப்", "ப", "ம்"] },
-    { word: "மணிக்கட்டை", scrambled: ["ம", "ணி", "க்", "க", "ட்", "டை"] },
-    { word: "பள்ளி", scrambled: ["ப", "ள்", "ளி"] },
+    { word: "இடியாப்பம்", scrambled: ["ப்", "ம", "டி", "யா", "இ", "ப்"] },
+    { word: "மணிக்கட்டை", scrambled: ["ணி", "டை", "க்", "ம", "ட்", "க"] },
+    { word: "பள்ளி", scrambled: ["ளி", "ள்", "ப"] },
   ],
   hard: [
-    { word: "சிந்தனைகள்", scrambled: ["சி", "ந்", "த", "னை", "கள்"] },
-    { word: "தொகுதிகள்", scrambled: ["தொ", "கு", "தி", "கள்"] },
-    { word: "அரசு", scrambled: ["அ", "ர", "சு"] },
+    { word: "சிந்தனைகள்", scrambled: ["ந்", "கள்", "த", "சி", "னை"] },
+    { word: "தொகுதிகள்", scrambled: ["கு", "கள்", "தொ", "தி"] },
+    { word: "அரசு", scrambled: ["சு", "அ", "ர"] },
   ],
 };
 let currentLevel, currentIndex, score, levelStartTime, totalTime, timerInterval;
